@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Message Sender Tool</title>
     <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Discover an easy way to send messages on WhatsApp, Telegram, and Signal without saving the number. Our instant messaging tool lets you chat hassle-free!">
+    <meta name="keywords" content="WhatsApp message without saving number, Telegram message sender, Signal instant messaging, direct messaging tool, send WhatsApp message online">
+    <meta name="author" content="Your Website Name">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -68,41 +71,59 @@
         .buttons button:nth-child(3):hover {
             background-color: #3059c1;
         }
+        .tool-section {
+            background: #f1f1f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Send Direct Message</h1>
         <p>Send Direct message on WhatsApp, Telegram, and Signal without saving the number.</p>
-        <select id="countryCode">
-            <option value="+1">+1 (USA)</option>
-            <option value="+91">+91 (India)</option>
-            <option value="+44">+44 (UK)</option>
-            <option value="+61">+61 (Australia)</option>
-            <option value="+49">+49 (Germany)</option>
-            <option value="+33">+33 (France)</option>
-            <option value="+81">+81 (Japan)</option>
-            <option value="+86">+86 (China)</option>
-            <option value="+55">+55 (Brazil)</option>
-            <option value="+7">+7 (Russia)</option>
-            <option value="+39">+39 (Italy)</option>
-            <option value="+34">+34 (Spain)</option>
-            <option value="+971">+971 (UAE)</option>
-            <option value="+27">+27 (South Africa)</option>
-            <option value="+82">+82 (South Korea)</option>
-            <option value="+92">+92 (Pakistan)</option>
-            <option value="+62">+62 (Indonesia)</option>
-            <option value="+31">+31 (Netherlands)</option>
-            <option value="+46">+46 (Sweden)</option>
-        </select>
-        <input type="text" id="phone" placeholder="Enter Phone Number" />
-        <textarea id="message" placeholder="Enter Your Message"></textarea>
-        <div class="buttons">
-            <button onclick="sendWhatsApp()">Send via WhatsApp</button>
-            <button onclick="sendTelegram()">Send via Telegram</button>
-            <button onclick="sendSignal()">Send via Signal</button>
+
+        <!-- The Tool Section placed before the next content -->
+        <div class="tool-section">
+            <h3>Message Sender Tool</h3>
+            <p>Quickly send messages to WhatsApp, Telegram, and Signal without the need to save a contact. Simply select your preferred platform, input the phone number, and start typing your message.</p>
+            <select id="countryCode">
+                <option value="+1">+1 (USA)</option>
+                <option value="+91">+91 (India)</option>
+                <option value="+44">+44 (UK)</option>
+                <option value="+61">+61 (Australia)</option>
+                <option value="+49">+49 (Germany)</option>
+                <option value="+33">+33 (France)</option>
+            </select>
+            <input type="text" id="phone" placeholder="Enter Phone Number" />
+            <textarea id="message" placeholder="Enter Your Message"></textarea>
+            <div class="buttons">
+                <button onclick="sendWhatsApp()">Send via WhatsApp</button>
+                <button onclick="sendTelegram()">Send via Telegram</button>
+                <button onclick="sendSignal()">Send via Signal</button>
+            </div>
         </div>
+
+        <!-- Explanation Section -->
+        <h3>Why Use This Instant Messaging Tool?</h3>
+        <ul>
+            <li>🚀 Saves Time – No need to clutter your contact list with temporary numbers.</li>
+            <li>📱 Works on WhatsApp, Telegram, and Signal – Choose your preferred messaging app.</li>
+            <li>🌎 Supports Multiple Countries – Use international country codes easily.</li>
+            <li>🔒 Secure & Private – No personal data is stored.</li>
+            <li>🎨 Easy-to-Use Interface – A sleek and user-friendly design.</li>
+        </ul>
+
+        <h3>How to Use the Message Sender Tool?</h3>
+        <ol>
+            <li>Select the Country Code</li>
+            <li>Enter the Phone Number</li>
+            <li>Write Your Message</li>
+            <li>Click the Send Button</li>
+        </ol>
     </div>
+
     <script>
         function sendWhatsApp() {
             let countryCode = document.getElementById('countryCode').value;
@@ -120,7 +141,12 @@
             let phone = document.getElementById('phone').value;
             let message = encodeURIComponent(document.getElementById('message').value);
             if (phone) {
-                window.open(`https://t.me/${countryCode}${phone}?text=${message}`, '_blank');
+                let username = prompt('Please enter the Telegram username (e.g., @username):');
+                if (username) {
+                    window.open(`https://t.me/${username}?text=${message}`, '_blank');
+                } else {
+                    alert('Please provide a valid Telegram username.');
+                }
             } else {
                 alert('Please enter a phone number.');
             }
