@@ -32,7 +32,7 @@ This is an easy-to-use web tool that allows you to send instant messages on What
 
 Check out the live demo of the tool on GitHub Pages:
 
-[Live Demo](https://sendirectmessage.github.io)
+[Live Demo](https://senddirectmessage.github.io)
 
 ## 📚 How Does This Work?
 - **WhatsApp**: The tool uses WhatsApp’s official `wa.me` links to initiate a chat.
