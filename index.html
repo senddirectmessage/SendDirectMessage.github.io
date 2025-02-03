@@ -4,56 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Message Sender Tool</title>
-    <link rel="stylesheet" href="styles.css">
-    <meta name="description" content="Discover an easy way to send messages on WhatsApp, Telegram, and Signal without saving the number. Our instant messaging tool lets you chat hassle-free!">
-    <meta name="keywords" content="WhatsApp message without saving number, Telegram message sender, Signal instant messaging, direct messaging tool, send WhatsApp message online">
+    <meta name="description" content="Send messages on WhatsApp, Telegram, and Signal without saving the number. Instant, hassle-free messaging!">
+    <meta name="keywords" content="WhatsApp message without saving number, Telegram message sender, Signal messaging tool, direct messaging tool">
     <meta name="author" content="Your Website Name">
-    <meta name="author" content="https://senddirectmessage.github.io/">
+    <link rel="stylesheet" href="styles.css">
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            align-items: flex-start;  /* Adjusted from 'center' to 'flex-start' */
-            height: 100vh;
-            margin: 0;
+            min-height: 100vh;
             background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            overflow: auto;  /* Allows scroll if content is overflowing */
+            padding: 20px;
+            margin: 0;
         }
+
         .container {
             background: white;
-@@ -24,7 +26,9 @@
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             text-align: center;
             border-radius: 10px;
-            width: 90%;
-            max-width: 400px;
-            max-width: 600px;
-            max-height: 95vh;  /* Ensures the container doesn't overflow vertically */
-            overflow-y: auto;  /* Makes the content scrollable if needed */
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
         }
+
         h1 {
             color: #ff4b5c;
-@@ -77,90 +81,94 @@
-            border-radius: 5px;
-            margin-bottom: 20px;
+            font-size: 24px;
+            margin-bottom: 10px;
         }
+
         ul, ol {
             text-align: left;
             padding-left: 20px;
         }
+
+        /* Form Elements */
+        select, input, textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        /* Button Styling */
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .buttons button {
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .buttons button:nth-child(1) { background-color: #25D366; color: white; }
+        .buttons button:nth-child(2) { background-color: #0088cc; color: white; }
+        .buttons button:nth-child(3) { background-color: #3a76f0; color: white; }
+
+        .buttons button:hover {
+            opacity: 0.8;
+        }
+
     </style>
 </head>
 <body>
+
     <div class="container">
         <h1>Send Direct Message</h1>
-        <p>Send Direct message on WhatsApp, Telegram, and Signal without saving the number.</p>
+        <p>Send messages on WhatsApp, Telegram, and Signal instantly without saving the number.</p>
 
-        <!-- The Tool Section placed before the next content -->
-        <div class="tool-section">
-            <h3>Message Sender Tool</h3>
-            <p>Quickly send messages to WhatsApp, Telegram, and Signal without the need to save a contact. Simply select your preferred platform, input the phone number, and start typing your message.</p>
-            <select id="countryCode">
+        <!-- Messaging Tool -->
+        <h3>Message Sender Tool</h3>
+        <p>Quickly send messages without saving contacts. Select a platform, enter the number, and send your message.</p>
+
+        <select id="countryCode">
             <option value="+1">+1 (USA)</option>
             <option value="+91">+91 (India)</option>
             <option value="+44">+44 (UK)</option>
@@ -74,26 +117,27 @@
             <option value="+31">+31 (Netherlands)</option>
             <option value="+46">+46 (Sweden)</option>
         </select>
-            <input type="text" id="phone" placeholder="Enter Phone Number" />
-            <textarea id="message" placeholder="Enter Your Message"></textarea>
-            <div class="buttons">
-                <button onclick="sendWhatsApp()">Send via WhatsApp</button>
-                <button onclick="sendTelegram()">Send via Telegram</button>
-                <button onclick="sendSignal()">Send via Signal</button>
-            </div>
+
+        <input type="text" id="phone" placeholder="Enter Phone Number" />
+        <textarea id="message" placeholder="Enter Your Message"></textarea>
+        
+        <div class="buttons">
+            <button onclick="sendWhatsApp()">Send via WhatsApp</button>
+            <button onclick="sendTelegram()">Send via Telegram</button>
+            <button onclick="sendSignal()">Send via Signal</button>
         </div>
 
         <!-- Explanation Section -->
-        <h3>Why Use This Instant Messaging Tool?</h3>
+        <h3>Why Use This Tool?</h3>
         <ul>
-            <li>🚀 Saves Time – No need to clutter your contact list with temporary numbers.</li>
-            <li>📱 Works on WhatsApp, Telegram, and Signal – Choose your preferred messaging app.</li>
-            <li>🌎 Supports Multiple Countries – Use international country codes easily.</li>
-            <li>🔒 Secure & Private – No personal data is stored.</li>
-            <li>🎨 Easy-to-Use Interface – A sleek and user-friendly design.</li>
+            <li>🚀 No need to save numbers</li>
+            <li>📱 Works on WhatsApp, Telegram, and Signal</li>
+            <li>🌎 Supports multiple countries</li>
+            <li>🔒 Secure and private</li>
+            <li>🎨 Easy-to-use interface</li>
         </ul>
 
-        <h3>How to Use the Message Sender Tool?</h3>
+        <h3>How to Use:</h3>
         <ol>
             <li>Select the Country Code</li>
             <li>Enter the Phone Number</li>
@@ -102,12 +146,11 @@
         </ol>
     </div>
 
-   
     <script>
         function sendWhatsApp() {
             let countryCode = document.getElementById('countryCode').value;
-            let phone = document.getElementById('phone').value;
-            let message = encodeURIComponent(document.getElementById('message').value);
+            let phone = document.getElementById('phone').value.trim();
+            let message = encodeURIComponent(document.getElementById('message').value.trim());
             if (phone) {
                 window.open(`https://wa.me/${countryCode}${phone}?text=${message}`, '_blank');
             } else {
@@ -117,8 +160,8 @@
 
         function sendTelegram() {
             let countryCode = document.getElementById('countryCode').value;
-            let phone = document.getElementById('phone').value;
-            let message = encodeURIComponent(document.getElementById('message').value);
+            let phone = document.getElementById('phone').value.trim();
+            let message = encodeURIComponent(document.getElementById('message').value.trim());
             if (phone) {
                 window.open(`https://t.me/${countryCode}${phone}?text=${message}`, '_blank');
             } else {
@@ -128,13 +171,15 @@
 
         function sendSignal() {
             let countryCode = document.getElementById('countryCode').value;
-            let phone = document.getElementById('phone').value;
-            let message = document.getElementById('message').value;
+            let phone = document.getElementById('phone').value.trim();
+            let message = document.getElementById('message').value.trim();
             if (phone) {
-                alert(`Signal does not support direct web links. Use the app to send: ${message}`);
+                alert(`Signal does not support direct web links. Copy this message and send manually:\n\n${message}`);
             } else {
                 alert('Please enter a phone number.');
             }
         }
     </script>
+
 </body>
+</html>
