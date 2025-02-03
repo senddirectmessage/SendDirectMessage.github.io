@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message Sender Tool</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Message Sender Tool - Send Messages Without Saving Numbers</title>
     <meta name="description" content="Send WhatsApp, Telegram, and Signal messages instantly without saving the number. Fast, secure, and easy-to-use online messaging tool.">
     <meta name="keywords" content="WhatsApp message without saving number, Telegram message sender, Signal instant messaging, direct messaging tool, send WhatsApp message online">
     <meta name="author" content="Your Website Name">
@@ -14,8 +13,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            flex-direction: column;
+            padding: 20px;
         }
         .container {
             background: white;
@@ -29,8 +30,9 @@
         h1 {
             color: #ff4b5c;
         }
-        p {
+        p, li {
             color: #333;
+            text-align: left;
         }
         select, input, textarea {
             width: 100%;
@@ -54,37 +56,33 @@
             background-color: #25D366;
             color: white;
         }
-        .buttons button:nth-child(1):hover {
-            background-color: #1da851;
-        }
         .buttons button:nth-child(2) {
             background-color: #0088cc;
             color: white;
-        }
-        .buttons button:nth-child(2):hover {
-            background-color: #0077b5;
         }
         .buttons button:nth-child(3) {
             background-color: #3a76f0;
             color: white;
         }
-        .buttons button:nth-child(3):hover {
-            background-color: #3059c1;
-        }
     </style>
 </head>
 <body>
+
     <div class="container">
         <h1>Send Direct Message</h1>
-        <p>Send Direct message on WhatsApp, Telegram, and Signal without saving the number.</p>
-        <p>Use this instant messaging tool to send messages securely and quickly.</p>
+        <p>Send WhatsApp, Telegram, and Signal messages instantly without saving contacts.</p>
+
         <h2>Why Use This Tool?</h2>
         <ul>
-            <li>No need to save contacts</li>
-            <li>Supports multiple countries</li>
-            <li>Secure and private</li>
-            <li>Works on WhatsApp, Telegram, and Signal</li>
+            <li>✔ No need to save numbers</li>
+            <li>✔ Supports multiple countries</li>
+            <li>✔ Secure and private</li>
+            <li>✔ Works on WhatsApp, Telegram, and Signal</li>
         </ul>
+
+        <h3>How It Works:</h3>
+        <p>Simply enter the phone number, select the messaging platform, and click send.</p>
+
         <select id="countryCode">
             <option value="+1">+1 (USA)</option>
             <option value="+91">+91 (India)</option>
@@ -114,6 +112,7 @@
             <button onclick="sendSignal()">Send via Signal</button>
         </div>
     </div>
+
     <script>
         function sendWhatsApp() {
             let countryCode = document.getElementById('countryCode').value;
@@ -148,5 +147,6 @@
             }
         }
     </script>
+
 </body>
 </html>
